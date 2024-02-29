@@ -1,0 +1,21 @@
+[package]
+name = "thread-async"
+version = "0.1.0"
+edition = "2021"
+
+[package.metadata.docs.rs]
+features = ["std"]
+rustdoc-args = ["--cfg", "docsrs"]
+
+[features]
+default = ["std"]
+std = []
+
+[dependencies]
+pin-project-lite = "0.2"
+
+[dev-dependencies]
+async-std = "1"
+bytes = "1"
+http-body-util = "0.1"
+hyper = { version = "1", features = ["client", "http1"] }
